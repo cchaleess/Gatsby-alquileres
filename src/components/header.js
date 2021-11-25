@@ -1,42 +1,54 @@
-import * as React from "react"
-import PropTypes from "prop-types"
-import { Link } from "gatsby"
+import React from 'react'
+import { Link, graphql, useStaticQuery} from 'gatsby';
+import Navegacion from './navegacion';
+import { css } from '@emotion/react';
+import styled from '@emotion/styled';
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
-)
+const EnlaceHome = styled(Link)`
+    color: #FFF;
+    text-align: center;
+    text-decoration: none;
+`;
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
+const Header = () => {
+
+    //Consulta logo.svg
+
+    const { logo } = useStaticQuery(graphql` 
+    
+    query {
+        logo: file(relativePath: {eq: "logo.svg"}){
+          publicURL
+        }
+      }   
+    `);
+     //console.log(logo);
+
+    return ( 
+
+        <header   css={css`
+        background-color: rgba(12,80,75);
+        padding: 1rem;
+    `}>
+            <div  css={css`
+                    max-width: 1200px;
+                    margin: 0 auto;
+                    @media (min-width: 768px) {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                    }
+                `}>
+
+        <EnlaceHome to='/'>            
+          <img src={logo.publicURL} alt="Logo Alquileres" width='130px'/>
+        </EnlaceHome>
+        
+            <Navegacion />
+
+            </div>
+        </header>
+     );
 }
-
-Header.defaultProps = {
-  siteTitle: ``,
-}
-
-export default Header
+ 
+export default Header;
