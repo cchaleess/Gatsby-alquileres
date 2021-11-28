@@ -3,29 +3,36 @@ import Layout from '../components/layout';
 import useInicio from '../hooks/useInicio';
 import { css } from '@emotion/react';
 import BackgroundImage from 'gatsby-background-image'
-import { getImage, GatsbyImage } from "gatsby-plugin-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 import { convertToBgImage } from "gbimage-bridge"
+
 
 const Index = () => {
 
    const inicio = useInicio();
    const {nombre, contenido, imagen} = inicio[0];
    console.log(imagen);
-   const imagenGatsby = getImage(imagen[0].localFile.childImageSharp.gatsbyImageData);
-   const bgImage = convertToBgImage(imagenGatsby);
+   const imagenfluid = imagen[0].localFile.sharp.fluid;
+   const bgImage = convertToBgImage(imagenfluid);
 
    return ( 
         <Layout>
            <BackgroundImage 
                Tag="section"
-               css = {css`
-                  height: 600px;`}
+               fluid={imagenfluid}
+               css={css`
+                     height: 600px;
+                     `}
                 {...bgImage}
-               preserveStackingContext
-               fadeIn="soft"
-               >
-               <GatsbyImage image={imagenGatsby} alt=""/>
-               </BackgroundImage>
+               fadeIn="soft">
+                 <div><h1>jdjdjdj</h1></div> 
+                              
+           </BackgroundImage>
+
+             <GatsbyImage 
+                     image={imagenfluid} 
+                     alt=""
+                     />       
            <main>
               <div
                   css={css`

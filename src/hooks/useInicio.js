@@ -4,26 +4,26 @@ const useInicio = () => {
 
     const resultado = useStaticQuery(
         graphql`
-            query {      
+            query {
                 allStrapiPaginas(filter: {nombre: {eq: "Inicio"}}) {
-                nodes {
-                    id
-                    nombre
-                    contenido
-                    imagen {
-                        localFile{
-                         childImageSharp{
-                            gatsbyImageData(width:1200)
-                            fluid (maxWidth:1200){
-                                ...GatsbyImageSharpFluid
-                }
+                    nodes {
+                        id
+                        nombre
+                        contenido
+                        imagen {
+                            localFile{
+                                sharp: childImageSharp {
+                                    fluid(quality:90, maxWidth: 1200) {
+                                        ...GatsbyImageSharpFluid_withWebp
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
-                }
             }
-        } 
-    } 
-        ` );
+        `
+    ) 
     return resultado.allStrapiPaginas.nodes.map(inicio => ({
         nombre: inicio.nombre,
         contenido: inicio.contenido,
