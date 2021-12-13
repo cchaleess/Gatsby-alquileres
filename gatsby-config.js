@@ -16,9 +16,22 @@ module.exports = {
       },
     },
     `gatsby-plugin-image`,   
-    `gatsby-plugin-sharp`, 
-    `gatsby-transformer-sharp`,
-   /*   {
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        // Defaults used for gatsbyImageData and StaticImage
+        defaults: {},
+        // Set to false to allow builds to continue on image errors
+        failOnError: true,
+        // deprecated options and their defaults:
+        base64Width: 20,
+        forceBase64Format: `webp`, // valid formats: png,jpg,webp
+        useMozJpeg: process.env.GATSBY_JPEG_ENCODER === `MOZJPEG`,
+        stripMetadata: true,
+        defaultQuality: 50,
+      },
+    },    `gatsby-transformer-sharp`,
+/*   {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `gatsby-starter-default`,
@@ -34,9 +47,9 @@ module.exports = {
       options: {
         apiURL: "http://localhost:1337",
         contentTypes: [
-          "habitaciones",
           "pisos",
-          "paginas"
+          "paginas",
+          "opcions",
         ],
         queryLimit: 1000,
       },

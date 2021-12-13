@@ -1,0 +1,38 @@
+.imagenbg{
+    color: aliceblue;
+    height: 80%;
+    max-width: 1200px;
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.titulo {
+    font-size: 2.5rem;
+    max-width: 800px;
+    color: aliceblue;
+    height: 80%;
+    max-width: 1200px;
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (min-width: 992px) {
+    .titulo {
+        font-size: 6rem;
+    }
+}
+
+.pageContainer {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.containerWrap {
+    flex: 1;
+}

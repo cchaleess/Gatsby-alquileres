@@ -3,36 +3,37 @@ import Layout from '../components/layout';
 import useInicio from '../hooks/useInicio';
 import { css } from '@emotion/react';
 import BackgroundImage from 'gatsby-background-image'
-import { GatsbyImage } from "gatsby-plugin-image"
 import { convertToBgImage } from "gbimage-bridge"
+import {titulo } from '../css/hero.module.css';//otra forma de importar css
+import Encuentra from '../components/encuentra';
+import ListadoPisos from '../components/listadoPisos';
+import styled from 'styled-components';
+import Footer from '../components/footer';
+
+const ImagenBackground = styled(BackgroundImage)`
+    height: 500px;
+`;
+
 
 
 const Index = () => {
 
    const inicio = useInicio();
    const {nombre, contenido, imagen} = inicio[0];
-   console.log(imagen);
-   const imagenfluid = imagen[0].localFile.sharp.fluid;
-   const bgImage = convertToBgImage(imagenfluid);
+   const mainImg2 = imagen.localFile.sharp.gatsbyImageData;
+   const bgImage = convertToBgImage(mainImg2);   
 
-   return ( 
-        <Layout>
-           <BackgroundImage 
+   return (
+      <>
+       <Layout>
+            <ImagenBackground
                Tag="section"
-               fluid={imagenfluid}
-               css={css`
-                     height: 600px;
-                     `}
-                {...bgImage}
-               fadeIn="soft">
-                 <div><h1>jdjdjdj</h1></div> 
-                              
-           </BackgroundImage>
-
-             <GatsbyImage 
-                     image={imagenfluid} 
-                     alt=""
-                     />       
+               fadeIn="soft"
+               {...bgImage}         
+               >                 
+                  <h1 className={titulo}>Encuentra tu espacio</h1>
+               </ImagenBackground>
+            <hr />          
            <main>
               <div
                   css={css`
@@ -43,8 +44,12 @@ const Index = () => {
                   <h1>{nombre}</h1>
                   <p>{contenido}</p>
               </div>
-           </main>        
-        </Layout>
+           </main>
+           <Encuentra />
+             <ListadoPisos />
+         </Layout>
+         <Footer />
+         </>
      );
      
 }

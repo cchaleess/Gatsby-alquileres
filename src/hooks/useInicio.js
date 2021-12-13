@@ -11,12 +11,11 @@ const useInicio = () => {
                         nombre
                         contenido
                         imagen {
-                            localFile{
-                                sharp: childImageSharp {
-                                    fluid(quality:90, maxWidth: 1200) {
-                                        ...GatsbyImageSharpFluid_withWebp
-                                    }
-                                }
+                                localFile{
+                                    sharp:childImageSharp{
+                                        gatsbyImageData(
+                                            width:1200                                            )
+                                        }
                             }
                         }
                     }
@@ -27,7 +26,7 @@ const useInicio = () => {
     return resultado.allStrapiPaginas.nodes.map(inicio => ({
         nombre: inicio.nombre,
         contenido: inicio.contenido,
-        imagen: inicio.imagen,
+        imagen: inicio.imagen[0],
     }));
 }
  

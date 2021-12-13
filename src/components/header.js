@@ -27,7 +27,7 @@ const Header = () => {
     return ( 
 
         <header   css={css`
-        background-color: rgba(12,80,75);
+        background-color: #A2B700;
         padding: 1rem;
     `}>
             <div  css={css`
@@ -40,12 +40,11 @@ const Header = () => {
                     }
                 `}>
 
-        <EnlaceHome to='/'>            
+       { <EnlaceHome to='/'>            
           <img src={logo.publicURL} alt="Logo Alquileres" width='130px'/>
-        </EnlaceHome>
+        </EnlaceHome>}
         
             <Navegacion />
-
             </div>
         </header>
      );
