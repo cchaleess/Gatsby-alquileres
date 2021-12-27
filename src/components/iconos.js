@@ -37,11 +37,11 @@ const Iconos = ({wc,habitaciones, terraza, parking, mascota}) => {
         return ( 
             <ListadoIconos>
                 <li>
-                    <img src={imagenesIconos[6].node.publicURL} alt="wc" />
+                    <img src={imagenesIconos[7].node.publicURL} alt="wc" />
                     <p>{wc}</p>
                 </li>
                 <li>
-                    <img src={imagenesIconos[1].node.publicURL} alt="habitaciones" />
+                    <img src={imagenesIconos[4].node.publicURL} alt="habitaciones" />
                     <p>{habitaciones}</p>
                 </li>                
                     {terraza ?  <li><img src={imagenesIconos[8].node.publicURL} alt="terraza" /> </li> : null}

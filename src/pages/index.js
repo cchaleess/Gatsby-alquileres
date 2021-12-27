@@ -11,15 +11,14 @@ import styled from 'styled-components';
 import Footer from '../components/footer';
 
 const ImagenBackground = styled(BackgroundImage)`
-    height: 500px;
+    height: 400px;
 `;
-
-
 
 const Index = () => {
 
    const inicio = useInicio();
    const {nombre, contenido, imagen} = inicio[0];
+   console.log(imagen.localFile.sharp.gatsbyImageData);
    const mainImg2 = imagen.localFile.sharp.gatsbyImageData;
    const bgImage = convertToBgImage(mainImg2);   
 
@@ -29,7 +28,9 @@ const Index = () => {
             <ImagenBackground
                Tag="section"
                fadeIn="soft"
-               {...bgImage}         
+               {...bgImage}
+               backgroundColor={`#85929E`}
+      
                >                 
                   <h1 className={titulo}>Encuentra tu espacio</h1>
                </ImagenBackground>

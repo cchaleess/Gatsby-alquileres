@@ -7,26 +7,28 @@ const useInicio = () => {
             query {
                 allStrapiPaginas(filter: {nombre: {eq: "Inicio"}}) {
                     nodes {
-                        id
-                        nombre
-                        contenido
-                        imagen {
+                      id
+                      nombre
+                      contenido
+                      imagen{
                                 localFile{
-                                    sharp:childImageSharp{
-                                        gatsbyImageData(
-                                            width:1200                                            )
-                                        }
+                                        sharp:childImageSharp{
+                                            gatsbyImageData(width:1200)
                             }
                         }
+                      }
                     }
+                  }
                 }
-            }
+                
         `
     ) 
-    return resultado.allStrapiPaginas.nodes.map(inicio => ({
-        nombre: inicio.nombre,
+    console.log(resultado);
+    debugger;
+    return resultado.allStrapiPaginas.nodes.map(inicio => ({      
         contenido: inicio.contenido,
-        imagen: inicio.imagen[0],
+        imagen: inicio.imagen,  
+        nombre: inicio.nombre,
     }));
 }
  

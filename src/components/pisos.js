@@ -6,6 +6,8 @@ import Iconos from './iconos';
 import styled from 'styled-components';
 import Map from './maps';
 import { Carousel } from 'react-bootstrap';
+import Footer from './footer';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Contenido = styled.div`
     max-width: 1200px;
@@ -127,7 +129,7 @@ const Pisos = ({data: { allStrapiPisos: {nodes}}}) => {
                      <Map lat={lat} lon={lon}/>                 
                 </main>
                 <Sidebar>
-                    <p className="precio">€{precio}</p>
+                    <p className="precio"> PRECIO: €{precio}</p>
                     <Iconos
                         wc = {wc}
                         habitaciones = {habitaciones}
@@ -142,6 +144,7 @@ const Pisos = ({data: { allStrapiPisos: {nodes}}}) => {
                         </div>
                     </Sidebar>
             </Contenido>
+            <Footer />
         </Layout>
     );
 }

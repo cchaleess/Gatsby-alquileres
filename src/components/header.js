@@ -27,8 +27,9 @@ const Header = () => {
     return ( 
 
         <header   css={css`
-        background-color: #A2B700;
+        background-color: #2C3E50;
         padding: 1rem;
+        border-bottom: 2px solid #FFF;
     `}>
             <div  css={css`
                     max-width: 1200px;

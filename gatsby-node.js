@@ -2,7 +2,7 @@ const urlSlug = require('url-slug');
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const resultado = await graphql(`
-  query {
+   query {
     allStrapiPaginas {
       nodes {
         id
@@ -17,15 +17,14 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     }
 }
   `)
-
-  //console.log(JSON.stringify(resultado.data.allStrapiPisos));
+//  console.log(JSON.stringify(resultado.data.StrapiPisos));
 
   if (resultado.errors) {
     reporter.panicOnBuild(`Error al consultar GraphQL`, resultado.errors);
   }
 
   //Si hay resultados generamos las paginas
-  const pisos = resultado.data.allStrapiPisos.nodes;
+ const pisos = resultado.data.allStrapiPisos.nodes;
   const paginas = resultado.data.allStrapiPaginas.nodes;
 
   //Crear paginas

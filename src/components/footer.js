@@ -16,7 +16,7 @@ export const Box = styled.div`
     }
 `;
 export const Container = styled.div`
-    display: flex;
+    display: column;
     flex-direction: column;
     justify-content: center;
     margin: 0 auto;
@@ -24,7 +24,7 @@ export const Container = styled.div`
 export const Column = styled.div`
   display: flex;
   flex-direction: column;
-  text-align: left;
+  text-align: center;
   margin-left: 60px;
 `;
 export const Row = styled.div`

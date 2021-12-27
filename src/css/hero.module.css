@@ -25,6 +25,7 @@
 @media (min-width: 992px) {
     .titulo {
         font-size: 6rem;
+        font-weight: bold;
     }
 }
 
