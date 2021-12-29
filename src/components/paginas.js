@@ -50,7 +50,7 @@ const Paginas = ({data: { allStrapiPaginas: {nodes}}}) => {
                     <h1>{nombre}</h1>
                         <ContenidoPagina>
                                 <GatsbyImage 
-                                image={imagen[0].localFile.sharp.gatsbyImageData}
+                                image={imagen.localFile.sharp.gatsbyImageData}
                                 alt={nombre}
                                 />
                             <h3>{contenido}</h3>

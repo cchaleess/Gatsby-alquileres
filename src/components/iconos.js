@@ -37,16 +37,16 @@ const Iconos = ({wc,habitaciones, terraza, parking, mascota}) => {
         return ( 
             <ListadoIconos>
                 <li>
-                    <img src={imagenesIconos[7].node.publicURL} alt="wc" />
+                    <img src={imagenesIconos[4].node.publicURL} alt="wc" />
                     <p>{wc}</p>
                 </li>
                 <li>
-                    <img src={imagenesIconos[4].node.publicURL} alt="habitaciones" />
+                    <img src={imagenesIconos[0].node.publicURL} alt="habitaciones" />
                     <p>{habitaciones}</p>
                 </li>                
-                    {terraza ?  <li><img src={imagenesIconos[8].node.publicURL} alt="terraza" /> </li> : null}
-                    {parking ? <li><img src={imagenesIconos[5].node.publicURL} alt="parking" /></li> : null}
-                    {mascota ? <li><img src={imagenesIconos[0].node.publicURL} alt="mascota" /></li> : null}               
+                    {terraza ?  <li><img src={imagenesIconos[5].node.publicURL} alt="terraza" /> </li> : null}
+                    {parking ? <li><img src={imagenesIconos[2].node.publicURL} alt="parking" /></li> : null}
+                    {mascota ? <li><img src={imagenesIconos[3].node.publicURL} alt="mascota" /></li> : null}               
             </ListadoIconos>
          );
 }

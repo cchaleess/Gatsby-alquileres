@@ -36,26 +36,11 @@ const datos = useStaticQuery(graphql`
         }
     }
  `)
-
 //console.log(datos);
-
-    return datos.allStrapiPisos.nodes.map(piso => ({
-            id: piso.id,
-            nombre: piso.nombre,
-            descripcion: piso.descripcion,
-            wc: piso.wc,
-            precio: piso.precio,
-            terraza: piso.terraza,
-            opcion: piso.opcion,
-            habitaciones: piso.habitaciones,
-            lat: piso.lat,
-            lon: piso.lon,
-            parking: piso.parking,
-            mascota: piso.mascota,
-            vendedor: piso.vendedor,
-            imagen: piso.imagen[0].localFile.childImageSharp.gatsbyImageData
+    return datos.allStrapiPisos.nodes.map(piso => ({ id: piso.id, nombre: piso.nombre, descripcion: piso.descripcion, wc: piso.wc, precio: piso.precio,
+            terraza: piso.terraza, opcion: piso.opcion, habitaciones: piso.habitaciones, lat: piso.lat, lon: piso.lon, parking: piso.parking,
+            mascota: piso.mascota, vendedor: piso.vendedor,imagen: piso.imagen[0].localFile.childImageSharp.gatsbyImageData
         }))
-
 };
 
 export default usePisos;

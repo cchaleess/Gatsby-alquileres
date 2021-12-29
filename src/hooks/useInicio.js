@@ -23,8 +23,7 @@ const useInicio = () => {
                 
         `
     ) 
-    console.log(resultado);
-    debugger;
+   // console.log(resultado);
     return resultado.allStrapiPaginas.nodes.map(inicio => ({      
         contenido: inicio.contenido,
         imagen: inicio.imagen,  

@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    title: `Alquileres`,
+    description: `Proyecto DAM 2021 - Alquileres`,
+    author: `@carlosparedes`,
+    siteUrl: `https://www.linkedin.com/in/carlos-paredes-65ba4890/`,
   },
   plugins: [
     'gatsby-plugin-emotion',
@@ -19,11 +19,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-sharp`,
       options: {
-        // Defaults used for gatsbyImageData and StaticImage
         defaults: {},
-        // Set to false to allow builds to continue on image errors
         failOnError: true,
-        // deprecated options and their defaults:
         base64Width: 20,
         forceBase64Format: `webp`, // valid formats: png,jpg,webp
         useMozJpeg: process.env.GATSBY_JPEG_ENCODER === `MOZJPEG`,
@@ -31,7 +28,7 @@ module.exports = {
         defaultQuality: 50,
       },
     },    `gatsby-transformer-sharp`,
-/*   {
+   {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `gatsby-starter-default`,
@@ -41,7 +38,7 @@ module.exports = {
         display: `minimal-ui`,
         icon: `src/images/iconos/gatsby-icon.png`,
       },
-    }, */
+    }, 
     {
       resolve: "gatsby-source-strapi",
       options: {
